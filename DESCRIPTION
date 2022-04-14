@@ -20,9 +20,10 @@ Suggests:
     knitr,
     rmarkdown (>= 2.1)
 Collate:
+    zzz.R
     get_inds.R
     get_MOA.R
-    zzz.R
+    get_parent_chembl_id.R
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

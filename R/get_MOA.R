@@ -23,7 +23,7 @@ get_MOA <- function(ChEMBLIDs, full=FALSE, verbose=FALSE) {
 
     for (ChEMBLID in ChEMBLIDs ) {
         # ChEMBLID <- ChEMBLIDs[1]
-        ChEMBLID <- "CHEMBL1380"
+        # ChEMBLID <- "CHEMBL1380"
         print (ChEMBLID)
         moa_api <- "https://www.ebi.ac.uk/chembl/api/data/mechanism.json?molecule_chembl_id="
         moa_url <- paste0(moa_api, ChEMBLID)
