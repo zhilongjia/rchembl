@@ -4,10 +4,12 @@
 \alias{get_inds}
 \title{Get Drug indications based on ChEMBL IDs}
 \usage{
-get_inds(ChEMBLIDs, verbose = FALSE)
+get_inds(ChEMBLIDs, full = FALSE, verbose = FALSE)
 }
 \arguments{
 \item{ChEMBLIDs}{a vector of ChEMBL IDs, such as c("CHEMBL4303288", "CHEMBL1380")}
+
+\item{full}{FASLE (default) or TRUE. outputs molecule_chembl_id, mesh_heading, efo_term or all the related information}
 
 \item{verbose}{verbose.}
 }

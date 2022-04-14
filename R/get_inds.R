@@ -4,10 +4,11 @@
 #'
 #'
 #' @param ChEMBLIDs a vector of ChEMBL IDs, such as c("CHEMBL4303288", "CHEMBL1380")
+#' @param full FASLE (default) or TRUE. outputs molecule_chembl_id, mesh_heading, efo_term or all the related information
 #' @param verbose verbose.
 #' @return a tibble object with 3 columns, consisting of molecule_chembl_id, mesh_heading, efo_term.
-#' @importMethodsFrom dplyr %>%
-#' @importMethodsFrom jsonlite jsonlite
+#' @import dplyr
+#' @import jsonlite
 #' @examples
 #'
 #' ind_tib <- get_inds(c("CHEMBL4303288", "CHEMBL1380"))
@@ -16,7 +17,7 @@
 #'
 #' @export
 #'
-get_inds <- function(ChEMBLIDs, verbose=FALSE) {
+get_inds <- function(ChEMBLIDs,full=FALSE, verbose=FALSE) {
 
     indications_list <- list()
 
@@ -41,17 +42,22 @@ get_inds <- function(ChEMBLIDs, verbose=FALSE) {
 
     indications_tibble_raw <- dplyr::bind_rows(indications_list)
 
-    # reformat to tibble
-    indications_tibble <- data.frame(molecule_chembl_id=ChEMBLIDs)
+    if (full) {
+        return(indications_tibble_raw)
+    } else {
+        # reformat to tibble
+        indications_tibble <- data.frame(molecule_chembl_id=ChEMBLIDs)
 
-    mesh_heading_tibble <-  dplyr::group_by(indications_tibble_raw, molecule_chembl_id) %>%
-        dplyr::summarise(mesh_heading=pasteX(mesh_heading))
-    efo_term_tibble <-  dplyr::group_by(indications_tibble_raw, molecule_chembl_id) %>%
-        dplyr::summarise(efo_term=pasteX(efo_term))
+        mesh_heading_tibble <-  dplyr::group_by(indications_tibble_raw, molecule_chembl_id) %>%
+            dplyr::summarise(mesh_heading=pasteX(mesh_heading))
+        efo_term_tibble <-  dplyr::group_by(indications_tibble_raw, molecule_chembl_id) %>%
+            dplyr::summarise(efo_term=pasteX(efo_term))
 
-    indications_tibble <- dplyr::left_join(indications_tibble, mesh_heading_tibble) %>%
-        dplyr::left_join(efo_term_tibble)
+        indications_tibble <- dplyr::left_join(indications_tibble, mesh_heading_tibble) %>%
+            dplyr::left_join(efo_term_tibble)
 
-    return (indications_tibble)
+        return (indications_tibble)
+    }
+
 }
 

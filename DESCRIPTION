@@ -1,9 +1,9 @@
 Package: rchembl
 Type: Package
 Title: parse ChEMBL API
-Version: 0.1.0
-Author: Zhiloong Jia
-Maintainer: Zhiloong Jia <zhilongjia@gmail.com>
+Version: 0.0.1
+Author: Zhilong Jia
+Maintainer: Zhilong Jia <zhilongjia@gmail.com>
 Description: parse ChEMBL API
     get information about drugs, targets.
 biocViews: SystemsBiology, DataRepresentation,
@@ -21,6 +21,7 @@ Suggests:
     rmarkdown (>= 2.1)
 Collate:
     get_inds.R
+    get_MOA.R
     zzz.R
 License: GPL-3
 Encoding: UTF-8
