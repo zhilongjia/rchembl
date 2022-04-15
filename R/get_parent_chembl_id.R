@@ -9,8 +9,8 @@
 #' @return a tibble object with 2 columns, molecule_chembl_id and parent_chembl_id
 #' @examples
 #' ChEMBLIDs <- c("CHEMBL4303288", "CHEMBL1380")
-#' parent_CHEMBLID_tib <- get_parent_chembl_id(ChEMBLIDs)
-#' dim(parent_CHEMBLID_tib)
+#' res_tib <- get_parent_chembl_id(ChEMBLIDs)
+#' dim(res_tib)
 #' @export
 get_parent_chembl_id <- function(ChEMBLIDs) {
 

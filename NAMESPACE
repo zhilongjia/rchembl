@@ -3,5 +3,6 @@
 export(get_MOA)
 export(get_inds)
 export(get_parent_chembl_id)
+export(get_properties)
 import(dplyr)
 import(jsonlite)

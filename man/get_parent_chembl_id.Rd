@@ -21,6 +21,6 @@ ref: http://chembl.blogspot.com/2020/09/molecule-hierarchy.html
 }
 \examples{
 ChEMBLIDs <- c("CHEMBL4303288", "CHEMBL1380")
-parent_CHEMBLID_tib <- get_parent_chembl_id(ChEMBLIDs)
-dim(parent_CHEMBLID_tib)
+res_tib <- get_parent_chembl_id(ChEMBLIDs)
+dim(res_tib)
 }

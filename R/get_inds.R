@@ -11,8 +11,8 @@
 #' @import jsonlite
 #' @examples
 #'
-#' ind_tib <- get_inds(c("CHEMBL4303288", "CHEMBL1380"))
-#' dim(ind_tib)
+#' res_tib <- get_inds(c("CHEMBL4303288", "CHEMBL1380"))
+#' dim(res_tib)
 #'
 #'
 #' @export

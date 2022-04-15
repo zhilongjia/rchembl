@@ -21,8 +21,8 @@ Get Drug Mechanism and Targets based on ChEMBL IDs
 }
 \examples{
 ChEMBLIDs <- c("CHEMBL4303288", "CHEMBL1380")
-MOA_tib <- get_MOA(ChEMBLIDs)
-dim(MOA_tib)
+res_tib <- get_MOA(ChEMBLIDs)
+dim(res_tib)
 
 
 }

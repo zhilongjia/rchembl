@@ -11,8 +11,8 @@
 #' @import jsonlite
 #' @examples
 #' ChEMBLIDs <- c("CHEMBL4303288", "CHEMBL1380")
-#' MOA_tib <- get_MOA(ChEMBLIDs)
-#' dim(MOA_tib)
+#' res_tib <- get_MOA(ChEMBLIDs)
+#' dim(res_tib)
 #'
 #'
 #' @export
@@ -24,7 +24,7 @@ get_MOA <- function(ChEMBLIDs, full=FALSE, verbose=FALSE) {
     for (ChEMBLID in ChEMBLIDs ) {
         # ChEMBLID <- ChEMBLIDs[1]
         # ChEMBLID <- "CHEMBL1380"
-        print (ChEMBLID)
+        if (verbose) {print (ChEMBLID)}
         moa_api <- "https://www.ebi.ac.uk/chembl/api/data/mechanism.json?molecule_chembl_id="
         moa_url <- paste0(moa_api, ChEMBLID)
         moa_list <- jsonlite::fromJSON(moa_url)
