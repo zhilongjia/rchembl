@@ -1,6 +1,6 @@
 # rchembl
 
-The rchembl is a bioConductor package to query ChEMBL data via [ChEMBL Data Web Services](https://chembl.gitbook.io/chembl-interface-documentation/web-services/chembl-data-web-services)
+The rchembl package is to query ChEMBL data via [ChEMBL Data Web Services](https://chembl.gitbook.io/chembl-interface-documentation/web-services/chembl-data-web-services)
 
 
 ## functions
