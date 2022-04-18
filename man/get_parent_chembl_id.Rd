@@ -4,10 +4,12 @@
 \alias{get_parent_chembl_id}
 \title{get parent chembl ID}
 \usage{
-get_parent_chembl_id(ChEMBLIDs)
+get_parent_chembl_id(ChEMBLIDs, verbose = FALSE)
 }
 \arguments{
 \item{ChEMBLIDs}{a vector of ChEMBL IDs, such as c("CHEMBL4303288", "CHEMBL1380")}
+
+\item{verbose}{verbose.}
 }
 \value{
 a tibble object with 2 columns, molecule_chembl_id and parent_chembl_id
@@ -20,7 +22,7 @@ molecule hierarchy.
 ref: http://chembl.blogspot.com/2020/09/molecule-hierarchy.html
 }
 \examples{
-ChEMBLIDs <- c("CHEMBL4303288", "CHEMBL1380")
+ChEMBLIDs <- c("CHEMBL4303288", "CHEMBL1380", "CHEMBL3040746")
 res_tib <- get_parent_chembl_id(ChEMBLIDs)
 dim(res_tib)
 }

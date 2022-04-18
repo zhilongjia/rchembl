@@ -32,7 +32,7 @@ get_inds <- function(ChEMBLIDs,full=FALSE, verbose=FALSE) {
 
         # multi-pages
         while( !is.null(ind_list$page_meta$"next") ) {
-            print (ind_list$page_meta$total_count)
+            print (paste("total_count:", ind_list$page_meta$total_count))
             ind_list <- fromJSON(paste0("https://www.ebi.ac.uk", ind_list$page_meta$"next") )
             ind_tibble <- dplyr::bind_rows(ind_tibble, ind_list$drug_indications)
         }
