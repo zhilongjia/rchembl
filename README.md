@@ -8,6 +8,7 @@ The rchembl package is to query ChEMBL data via [ChEMBL Data Web Services](https
 * `get_MOA` obtains the MOA and targets of drugs. [14 Apr. 2022]
 * `get_parent_chembl_id` obtains the parent ChEMBL ID of drugs. [14 Apr. 2022]
 * `get_properties` obtains molecule information, including properties, structural representations and synonyms. [15 Apr. 2022] 
+* `get_alternative_forms` obtains all the alternative forms of a parent ChEMBL ID. [21 Apr. 2022] 
 
 ## to do list
 

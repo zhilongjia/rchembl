@@ -24,6 +24,7 @@ Collate:
     get_inds.R
     get_MOA.R
     get_parent_chembl_id.R
+    get_alternative_forms.R
     get_properties.R
 License: GPL-3
 Encoding: UTF-8
